@@ -2,6 +2,7 @@ import axios from 'axios'
 import React, { useState } from 'react'
 import { apiHttp } from '../Port'
 import { useEffect } from 'react'
+import { Link } from 'react-router-dom'
 
 function AddBranch() {
 
@@ -99,6 +100,7 @@ function AddBranch() {
      
   return (
    <>
+   <div className='allCon'>
     <div className="con conForm">
           <div className='errorDisplay' style={{display:errorDisplay!=0?'flex':'none'}}> <div className='errorDisplayClose' onClick={()=>(setErrorDisplay(0))}>X</div> {errorDisplay?.message}</div>
           <div className='errorDisplay' style={{display:addBranchResultDisplay!=0?'flex':'none',color:addBranchResultDisplay.success=='yes'?'green':'red'}}> <div className='errorDisplayClose' onClick={()=>(setAddBranchResultDisplay(0))}>X</div> {addBranchResultDisplay.message}</div>
@@ -125,48 +127,48 @@ function AddBranch() {
 <div className="conContactsItems infoDisplayCon" style={{flexDirection:'column'}}>
     <div className="conContactsItemsInfoCon infoDisplayItemsCon " >
 
-        <div className="conContactsItemsTitle">
-            <div className="conContactsItemsTitleText">Branch Name</div>
+
+    <div className='added-branch-info-list' >
+    <div className="conContactsItemsTitleText">Branch Name</div>
+    <div className="bar-items-con-desc">{newBranchInfo?.branchName}</div>
         </div>
 
-        <div className="conContactsItemsInfo">
-            <div className="conContactsItemsInfoText">{newBranchInfo?.branchName}</div>
-        </div>
+       
        
     </div>
 
     <div className="conContactsItemsInfoCon infoDisplayItemsCon " >
 
-        <div className="conContactsItemsTitle">
-            <div className="conContactsItemsTitleText">User Name</div>
+
+    <div className='added-branch-info-list'>
+    <div className="conContactsItemsTitleText">User Name</div>
+    <div className="bar-items-con-desc">{newBranchInfo?.userName}</div>
         </div>
 
-        <div className="conContactsItemsInfo">
-            <div className="conContactsItemsInfoText">{newBranchInfo?.userName}</div>
-        </div>
+        
        
     </div>
     <div className="conContactsItemsInfoCon infoDisplayItemsCon " >
 
-        <div className="conContactsItemsTitle">
+    <div className='added-branch-info-list'>
             <div className="conContactsItemsTitleText">Password</div>
+            <div className="bar-items-con-desc">{newBranchInfo?.password}</div>
         </div>
 
-        <div className="conContactsItemsInfo">
-            <div className="conContactsItemsInfoText">{newBranchInfo?.password}</div>
-        </div>
+       
        
     </div>
    
     <div className="conContactsItemsInfoCon infoDisplayItemsCon " >
 
-        <div className="conContactsItemsTitle">
-            <div className="conContactsItemsTitleText">Registretion Date</div>
+        <div className='added-branch-info-list'>
+        <div className="conContactsItemsTitleText">Registretion Date</div>
+        <div className="bar-items-con-desc">{newBranchInfo?.registretionDate}</div>
         </div>
+        
 
-        <div className="conContactsItemsInfo">
-            <div className="conContactsItemsInfoText">{newBranchInfo?.registretionDate}</div>
-        </div>
+
+       
        
     </div>
 
@@ -178,48 +180,45 @@ function AddBranch() {
 
 </div>
 
-              <form className='formCon'>
+
+              <form className='formCon formConSearch'>
                  
                  <input className='formInput' onChange={(e)=>setSearchBranch(e.target.value)} type="text" placeholder='Search Branchs'  />
                
               </form>
    
 
-<div className='listCon '>
+
+
+              <div className='listCon '>
         
-{branchs?.map((branch,index)=>(
-    <div className="conContacts listConBarnch">
-
-
-    <div className="conContactsItems conContactsListOfBranchItems">
-    
-        <div className='listNumber' >{index + 1}</div>
-    
-        <div className="conContactsItemsInfoCon conContactsItemsInfoConBranch" style={{border:'none'}}>
-    
-            <div className="conContactsItemsTitle">
-                <div className="conContactsItemsTitleText">{branch?.branchName}</div>
-            </div>
-    
-            <div className="conContactsItemsInfo">
-                <div className="conContactsItemsInfoText ItemsInfoTextBranchList">{branch?.desc}</div>
-            </div>
-    
+        {branchs?.map((branch,index)=>(
+            <Link to={`/branchtelebirrinfo/${branch?.id}/${branch?.branchName}`} className="bar-items-con">
+        
+        
+            
+                <div className='listNumber' >{index + 1}</div>
+               <div className='bar-items-con-text'>
+                 <div className="bar-items-con-name">{branch?.branchName}</div>
+        
+                <div className="bar-items-con-desc">{branch?.desc}</div>
+               </div>
+        
+            
+              
+            
+            
+            </Link>
+        ))}
+        
         </div>
-    </div>
-    
-    
-    </div>
-))}
 
+
+        
+
+        
+    
 </div>
-
-
-        
-
-        
-    
-
    </>
   )
 }

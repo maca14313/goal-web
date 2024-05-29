@@ -26,16 +26,25 @@ function App() {
         <div className="App" >
          <Routes>
 
-        {/* <Route path="/adminhome" element={<AdminHomePage/>}/> */}
-         <Route path="/" element={<AdminHomePage/>}/>
+        {/* <Route path="/adminhome" element={<AdminHomePage/>}/>
+         <Route path="/addtelebirrregGoal" element={<AddTeleBirrRegGoal/>}/>
+
+        
+        */}
+        
+         <Route path="/" element={<AddTeleBirrRegGoal/>}/>
 
          <Route path="/addbranch" element={<AddBranch/>}/>
-         <Route path="/addtelebirrregGoal" element={<AddTeleBirrRegGoal/>}/>
+         <Route path="/adminhome" element={<AdminHomePage/>}/>
          <Route path="/branchtelebirrinfo/:id/:name" element={<BranchTeleBirrInfo/>}/>
          <Route path="/reportteleBirr/:id/:name" element={<ReportTeleBirr/>}/>
 
 
-        {/* <Route path="/" element={<BranchHome/>}/>*/}
+        {/* <Route path="/branchhome" element={<BranchHome/>}/>
+         <Route path="/telebirrregistration" element={<TeleBirrRegistration/>}/>
+
+        */}
+        
         <Route path='/branchhome' element={<BranchHome/>}/>
 
          <Route path="/branchlogin" element={<LogIn/>}/>

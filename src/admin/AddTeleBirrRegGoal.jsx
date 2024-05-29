@@ -193,16 +193,24 @@ function AddTeleBirrRegGoal() {
            let currentDate=new Date()
            let month=currentDate.getMonth()+1   
            let year=currentDate.getFullYear() 
-           let date=month+' / '+year  
+           let date=month+' / '+year 
+           
 
 
   return (
     <>
+    <div className='allCon'>
      <div className="con conForm">
+      
      <div className="conTitle"><h3>Tele Birr Registration</h3></div>
+     
+     <div className="conTopList">
+                <Link to={'/addbranch'} className="conTopListItem">Add Branch</Link>
+                
+            </div>
 
      <div className='errorDisplay' style={{display:errorDisplay!=0?'flex':'none'}}> <div className='errorDisplayClose' onClick={()=>(setErrorDisplay(0))}>X</div> {errorDisplay?.message}</div>
-     <div className='errorDisplay' style={{display:addResultDisplay!=0?'flex':'none',color:addResultDisplay?.success=='yes'?'green':'red'}}> <div className='errorDisplayClose' onClick={()=>(setAddResultDisplay(0))}>X</div> {addResultDisplay.message}</div>
+     <div className='errorDisplay' style={{display:addResultDisplay!=0?'flex':'none',color:addResultDisplay?.success=='yes'?'green':'red'}}> <div className='errorDisplayClose' onClick={()=>(setAddResultDisplay(0))}>X</div>{addResultDisplay.message}</div>
 
           
         <form className='formCon' onSubmit={addGoal} style={{display:newThisMonthGoalInfo?.success=='no'?'flex':'none'}}>
@@ -355,7 +363,7 @@ function AddTeleBirrRegGoal() {
 
 
 
-    <form className='formCon'>
+    <form className='formCon formConSearch'>
                  
                  <input className='formInput' onChange={(e)=>setSearchBranch(e.target.value)} type="text" placeholder='Search Branchs'  />
                
@@ -365,32 +373,26 @@ function AddTeleBirrRegGoal() {
 <div className='listCon '>
         
 {branchs?.map((branch,index)=>(
-    <Link to={`/branchtelebirrinfo/${branch?.id}/${branch?.branchName}`} className="conContacts listConBarnch">
+    <Link to={`/branchtelebirrinfo/${branch?.id}/${branch?.branchName}`} className="bar-items-con">
 
 
-    <div className="conContactsItems conContactsListOfBranchItems">
     
         <div className='listNumber' >{index + 1}</div>
+       <div className='bar-items-con-text'>
+         <div className="bar-items-con-name">{branch?.branchName}</div>
+
+        <div className="bar-items-con-desc">{branch?.desc}</div>
+       </div>
+
     
-        <div className="conContactsItemsInfoCon conContactsItemsInfoConBranch" style={{border:'none'}}>
-    
-            <div className="conContactsItemsTitle">
-                <div className="conContactsItemsTitleText">{branch?.branchName}</div>
-            </div>
-    
-            <div className="conContactsItemsInfo">
-                <div className="conContactsItemsInfoText ItemsInfoTextBranchList">{branch?.desc}</div>
-            </div>
-    
-        </div>
-    </div>
+      
     
     
     </Link>
 ))}
 
 </div>
-
+</div>
     </>
   )
 }

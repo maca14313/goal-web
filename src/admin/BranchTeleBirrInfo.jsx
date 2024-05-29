@@ -129,11 +129,11 @@ function BranchTeleBirrInfo() {
           
                   <div className="conContactsItemsTitle">
                       <div className="conContactsItemsTitleText">Branch Name</div>
+                      <div className="">{branchInfo?.branchName}</div>
+
                   </div>
           
-                  <div className="conContactsItemsInfo">
-                      <div className="conContactsItemsInfoText">{branchInfo?.branchName}</div>
-                  </div>
+                
                  
               </div>
           
@@ -141,22 +141,20 @@ function BranchTeleBirrInfo() {
           
                   <div className="conContactsItemsTitle">
                       <div className="conContactsItemsTitleText">User Name</div>
+                      <div className="">{branchInfo?.userName}</div>
+
                   </div>
           
-                  <div className="conContactsItemsInfo">
-                      <div className="conContactsItemsInfoText">{branchInfo?.userName}</div>
-                  </div>
-                 
+                
               </div>
               <div className="conContactsItemsInfoCon infoDisplayItemsCon " >
           
                   <div className="conContactsItemsTitle">
                       <div className="conContactsItemsTitleText">password</div>
+                      <div className="">{branchInfo?.password}</div>
+
                   </div>
           
-                  <div className="conContactsItemsInfo">
-                      <div className="conContactsItemsInfoText">{branchInfo?.password}</div>
-                  </div>
                  
               </div>
              
@@ -164,11 +162,11 @@ function BranchTeleBirrInfo() {
           
                   <div className="conContactsItemsTitle">
                       <div className="conContactsItemsTitleText">Description</div>
+                      <div className="desc-text">{branchInfo?.desc} Lorem ipsum dolor sit amet consectetur adipisicing elit.  </div>
+
                   </div>
           
-                  <div className="conContactsItemsInfo">
-                      <div className="conContactsItemsInfoText conContactsItemsInfoTextDesc">{branchInfo?.desc} Lorem ipsum dolor sit amet consectetur adipisicing elit. Qui ullam cupiditate aspernatur error, quis possimus necessitatibus ratione nobis dolor sed soluta vitae omnis earum ducimus distinctio repudiandae consequatur quasi voluptate a, nemo laboriosam reprehenderit. Repudiandae voluptates asperiores consectetur deserunt placeat, mollitia quidem reprehenderit laboriosam quibusdam non error, quis aliquid corrupti dignissimos fugit magni eveniet at. Quasi natus enim modi suscipit facere doloremque laudantium magni voluptatibus eveniet. Ipsum eveniet repellat consequuntur repellendus eligendi iure nisi sint voluptas, perferendis eius similique laboriosam beatae dolorum quas dolor optio saepe alias sapiente quis velit veritatis nemo amet quidem dicta. Aliquam inventore pariatur quod reprehenderit. </div>
-                  </div>
+                
                  
               </div>
           

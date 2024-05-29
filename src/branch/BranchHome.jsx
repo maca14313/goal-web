@@ -25,32 +25,12 @@ function BranchHome() {
                 <div  className="conTopListItem" onClick={()=>(logOut())}>Log Out</div>
                 
             </div>
-        <div className='listCon'>
+        <div className='listCon '>
        
 
-{tasks?.map((task)=>(
-    <Link to={'/addtelebirrregGoal'} className="conContacts" key={task?.id}>
 
 
-    <div className="conContactsItems">
-    
-        <div className="conContactsItemsImg" >Tele</div>
-        <div className="conContactsItemsInfoCon">
-    
-            <div className="conContactsItemsTitle taskName">
-                <div className="conContactsItemsTitleText">{task?.taskName}</div>
-            </div>
-    
-          
-    
-        </div>
-    </div>
-    
-    
-    </Link>
-))}
-
-<Link to={'/telebirrregistration'} className="conContacts">
+<Link to={'/telebirrregistration'} className="conContacts welcome-page-icon">
 
 
     <div className="conContactsItems">
@@ -69,68 +49,6 @@ function BranchHome() {
     
     
     </Link>
-
-    <div className="conContacts">
-
-
-    <div className="conContactsItems">
-    
-        <div className="conContactsItemsImg" >Evd</div>
-        <div className="conContactsItemsInfoCon">
-    
-            <div className="conContactsItemsTitle taskName">
-                <div className="conContactsItemsTitleText">Evd</div>
-            </div>
-    
-          
-    
-        </div>
-    </div>
-    
-    
-    </div>
-
-    <div className="conContacts">
-
-
-    <div className="conContactsItems">
-    
-        <div className="conContactsItemsImg" >VC</div>
-        <div className="conContactsItemsInfoCon">
-    
-            <div className="conContactsItemsTitle taskName">
-                <div className="conContactsItemsTitleText">vc card</div>
-            </div>
-    
-          
-    
-        </div>
-    </div>
-    
-    
-    </div>
-
-    <div className="conContacts">
-
-
-    <div className="conContactsItems">
-    
-        <div className="conContactsItemsImg" >EM</div>
-        <div className="conContactsItemsInfoCon">
-    
-            <div className="conContactsItemsTitle taskName">
-                <div className="conContactsItemsTitleText">E-money</div>
-            </div>
-    
-          
-    
-        </div>
-    </div>
-    
-    
-    </div>
-
-
 
 </div>
 

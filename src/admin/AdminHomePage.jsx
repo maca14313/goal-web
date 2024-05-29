@@ -33,7 +33,7 @@ function AdminHomePage() {
        
 
 {tasks?.map((task)=>(
-    <Link to={'/addtelebirrregGoal'} className="conContacts" key={task?.id}>
+    <Link to={'/addtelebirrregGoal'} className="conContacts welcome-page-icon" key={task?.id}>
 
 
     <div className="conContactsItems">
@@ -58,25 +58,7 @@ function AdminHomePage() {
 
    
 
-    <div className="conContacts">
-
-
-    <div className="conContactsItems">
-    
-        <div className="conContactsItemsImg" >EM</div>
-        <div className="conContactsItemsInfoCon">
-    
-            <div className="conContactsItemsTitle taskName">
-                <div className="conContactsItemsTitleText">E-money</div>
-            </div>
-    
-          
-    
-        </div>
-    </div>
-    
-    
-    </div>
+   
 
 
 

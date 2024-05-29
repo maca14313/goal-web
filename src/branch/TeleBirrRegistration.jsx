@@ -154,12 +154,16 @@ console.log(oneMonthdailyGoalInfo===[''])
            const timestampString = newThisMonthGoalInfo?.goalDate;
 const formattedDate = moment(timestampString).format('DD-MM-YYYY');
 
-
+const logOut=()=>{
+  localStorage.removeItem('branchData')
+  navigate('/branchlogin')
+}
   return (
     <div className='con'>
                      <div className="conTitle conTitleTop"><h3>Tele Birr Registration</h3></div>
                      <div className="conTitle"><h4>{branchName} Branch</h4></div>
-                     <div className='reportLinkCon'> <Link className='reportLink' to={'/telebirrreport'}>Report ➡️</Link></div>
+                 <div className='reportLinkCon'>                 <div  className="conTopListItem" onClick={()=>(logOut())}>Log Out</div>
+ <Link className='reportLink' to={'/telebirrreport'}>Report ➡️</Link></div>
   <div className='reportAllCon'>
 
   
